@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>TypeSpark | Free Typing Speed Test & Real-Time WPM Tracker</title>
-    <meta name="description" content="TypeSpark is a free online typing speed test to check your WPM. Track progress, practice typing, and boost your speed today.">
-    <meta name="keywords" content="TypeSpark, typing speed test, free typing test, online WPM test, typing accuracy test, no ads typing test, fast typing practice, typing game, typing speed checker, improve typing speed, WPM calculator, typing test online free, typing test for students, typing trainer, touch typing test, online typing challenge, fast typing game, WPM counter, practice typing, real-time typing speed, advanced typing test, typing skills test, quick typing speed test, keyboard typing test, free WPM checker">
+    <meta name="description" content="Test your typing speed with TypeSpark – a free online WPM tool. Track progress, improve accuracy, and practice typing daily.">
+    <meta name="keywords" content="typing test, typing speed test, online typing test, WPM test, typing accuracy, type speed test, words per minute, typing game, improve typing, fast typing practice, type challenge, typing trainer, typing practice online, free typing test, accuracy typing test, TypeSpark, typespark, type spark, typespark github">
   <link rel="canonical" href="https://satyaprakashsamai.github.io/typespark/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -118,6 +118,24 @@
     showNew();
   </script>
   <footer style="margin-top:40px;font-size:14px;color:var(--text-color);text-align:center;"><p>TypeSpark is currently available on PC, Mac, Android, and iOS.</p></footer>
+  <script>
+  // 1. Disable right-click context menu
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+
+  // 2. (Optional) Disable common DevTools shortcuts
+  document.addEventListener('keydown', function(e) {
+    // F12, Ctrl+Shift+I/J/C, Ctrl+U
+    if (
+      e.key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && ['I','J','C'].includes(e.key)) ||
+      (e.ctrlKey && e.key === 'U')
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
 </body>
 </html>
 
