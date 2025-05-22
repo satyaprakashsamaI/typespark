@@ -137,27 +137,15 @@
   });
 </script>
   <script>
-  // 1. Disable right-click context menu
-  document.addEventListener('contextmenu', e => e.preventDefault());
-
-  // 2. Disable common DevTools shortcuts + Ctrl+S / ⌘+S
-  document.addEventListener('keydown', e => {
-    // Normalize the key (all lowercase)
-    const key = e.key.toLowerCase();
-
-    if (
-      // F12
-      key === 'f12'
-      // Ctrl+Shift+I / J / C
-      || (e.ctrlKey && e.shiftKey && ['i','j','c'].includes(key))
-      // Ctrl+U (view source)
-      || (e.ctrlKey && key === 'u')
-      // Ctrl+S or ⌘+S (save page)
-      || ((e.ctrlKey || e.metaKey) && key === 's')
-    ) {
-      e.preventDefault();
-    }
-  });
+  // disable Ctrl+S / ⌘+S across keydown, keypress, keyup
+  ['keydown','keypress','keyup'].forEach(evt =>
+    document.addEventListener(evt, function(e) {
+      const key = e.key && e.key.toLowerCase();
+      if ((e.ctrlKey || e.metaKey) && key === 's') {
+        e.preventDefault();
+      }
+    }, false)
+  );
 </script>
 </body>
 </html>
